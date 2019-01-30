@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 }*/
 .brand-logo {
     content: "";
-    background: url(img/logo-sabores.svg) 50% no-repeat;
+    background: url(http://localhost/ajinomoto/resources/img/logo-sabores.svg) 50% no-repeat;
     background-size: 100% auto;
     width: 100px;
     height: 50px;
@@ -76,7 +76,9 @@ nav ul li a{
         <?php $this->load->view($view);?>
     </div>
         <?php $this->load->view('includes/footer');?>
-        <script type="text/javascript" src="<?php echo base_url('resources/js/fotos/scripts.js');?>"></script>
-
+        <script type="text/javascript" src="<?php echo base_url('resources/js/scripts.js');?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('resources/js/fotos/fotos.js');?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('resources/js/painel/painel.js');?>"></script>
+     
 </body>
 </html>
