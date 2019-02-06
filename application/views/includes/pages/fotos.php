@@ -4,8 +4,8 @@
         </div>
         <div class="fixed-action-btn ">
             <a class="btn-floating waves-effect waves-light btn-large blue" onclick="callFile()">
-              <i class="large material-icons">mode_edit</i>
+              <i class="large material-icons">add_a_photo</i>
             </a>
         </div>
     </div>
-   
+    <script type="text/javascript" src="<?php echo base_url('resources/js/fotos/fotos.js');?>"></script>

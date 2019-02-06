@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/ajinomoto/';
+$config['base_url'] = 'http://192.168.76.197/ajinomoto/';
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +37,7 @@ $config['base_url'] = 'http://localhost/ajinomoto/';
 */
 $config['index_page'] = '';
 
-$config['images_path'] = 'resources/upload/images/';
+$config['imagens_path'] = 'resources/upload/imagens/';
 /*
 |--------------------------------------------------------------------------
 | URI PROTOCOL

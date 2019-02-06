@@ -2,16 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="<?php echo base_url('resources/css/materialize.min.css');?>" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="<?php echo base_url('resources/css/pace.css');?>" media="screen,projection" />
-    <title>Document</title>
+    <meta charset="utf-8"/>
+    <?php $this->load->view($view_header);?>
 </head>
 <style>
 /*.card img {
@@ -32,6 +26,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     color: #CCC;
 }
 
+.ico_red {
+color:#ff0000 !important;
+
+}
+
+.ico_blue {
+color:#26a69a !important;
+}
 
 @media (min-width : 1000px) {
     .brand-logo {
@@ -53,32 +55,32 @@ nav ul li a{
 </style>
 <body>
   <!-- Dropdown Structure -->
-
+  <div class="navbar-fixed">
   <nav class="lighten-1">
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo"></a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#" onclick="sincroniza()">Sincronizar</a></li>
+        <li><a href="painel" class="sidenav-trigger show-on-large">Painel</a></li>
+        <li><a href="./" class="sidenav-trigger show-on-large">Fotos</a></li>
         <li><a href="badges.html">Sair</a></li>
-           <li><a href="#" onclick="toggleFullScreen()">Full</a></li>
       </ul>
     </div>
   </nav>
+</div>
 <!--  -->
   <ul class="sidenav" id="mobile-demo">
     <li><a href="#" onclick="sincroniza()"><i class="material-icons">cached</i>Sincronizar</a></li>
-    <li><a href="badges.html"><i class="material-icons">exit_to_app</i>Sair</a></li>
-      <li><a href="#" onclick="toggleFullScreen()"><i class="material-icons">exit_to_app</i>Ful</a></li>
+    <li><a href="painel" class="sidenav-trigger show-on-large"><i class="material-icons">art_track</i>Painel</a></li>
+    <li><a href="./" class="sidenav-trigger show-on-large"><i class="material-icons">add_a_photo</i>Fotos</a></li>
+    <li><a href="badges.html" class="sidenav-trigger show-on-large"><i class="material-icons">exit_to_app</i>Sair</a></li>
   </ul>
 
     <div class="container">
-        <?php $this->load->view($view);?>
+        <?php $this->load->view($page);?>
     </div>
         <?php $this->load->view('includes/footer');?>
-        <script type="text/javascript" src="<?php echo base_url('resources/js/scripts.js');?>"></script>
-        <script type="text/javascript" src="<?php echo base_url('resources/js/fotos/fotos.js');?>"></script>
-        <script type="text/javascript" src="<?php echo base_url('resources/js/painel/painel.js');?>"></script>
      
 </body>
 </html>

@@ -1,40 +1,16 @@
 
 
-	db.open({
-		server: 'ajinomoto',
-		version: 4,
-		schema: {
-			fotos: {
-				key: {
-					keyPath: 'id',
-					autoIncrement: true
-				},
-			}
-		}
-	}).done(function (s) {
-		server = s
-		getAll()
-	});
-
-	$('.sidenav').sidenav();
-	$('.fixed-action-btn').floatingActionButton();
-
 function addFoto(nome, base_64) {
 	server.fotos.add({
 		nome: nome,
 		base_64: base_64,
-		sinc: 0
+		erro: ''
 	}).done(function (item) {
 		getLastFoto()
 	});
 }
 
-function toast() {
-	M.toast({
-		html: localStorage.lastMessage
-	})
-	localStorage.setItem('lastMessage', '')
-}
+
 
 function removeFoto(id) {
 	toastHTML = '<span>Foto Removida</span><button class="btn-flat toast-action" onclick="undoFoto()">Desfazer</button>'
@@ -73,17 +49,6 @@ function undoFoto() {
 
 }
 
-function getAll() {
-
-	server.fotos.query().filter().execute().done(function (r) {
-		$('#imagens').html('')
-		$.each(r, function (index, value) {
-			let html = card(value)
-			$('#imagens').append(html);
-
-		});
-	});
-}
 
 
 function encodeImageFileAsURL(element) {

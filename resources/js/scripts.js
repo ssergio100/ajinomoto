@@ -1,10 +1,68 @@
+function toast() {
+	M.toast({
+		html: localStorage.lastMessage
+	})
+	localStorage.setItem('lastMessage', '')
+}
+
+function getAll() {
+	
+	server.fotos.query().filter().execute().done(function (r) {
+		$('#imagens').html('')
+		$.each(r, function (index, value) {
+			let html = card(value)
+			$('#imagens').append(html);
+
+		});
+	});
+}
+
+db.open({
+	server: 'ajinomoto',
+	version: 4,
+	schema: {
+		fotos: {
+			key: {
+				keyPath: 'id',
+				autoIncrement: true
+			},
+		}
+	}
+}).done(function (s) {
+	server = s
+	getAll()
+});
+
 function card(reg) {
 	html = `<div class="col s12 m4" id="card_${reg.id}">
                 <div class="card">
                     <div class="card-image">
                         <img src="${reg.base_64}">
                         <a class="btn-floating halfway-fab waves-effect waves-light white" onclick="removeFoto(${reg.id})">
-                        <i class="material-icons" style="color:red">delete</i></a>
+						<i class="material-icons ico_red">delete</i>
+						</a>
+						
+                    </div>
+                    <div class="card-content">
+                        <p> ${reg.nome}</p>
+                    </div>
+                      <div class="progress" id="bar_${reg.id}" style="display:none">
+                        <div  class="determinate" ></div>
+                    </div>
+                </div>
+            </div>`
+	return html
+}
+
+function card_painel(reg) {
+	html = `<div class="col s12 m4" id="card_${reg.id}">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="${reg.base_64}">
+                        <a class="btn-floating halfway-fab waves-effect waves-light white" onclick="removeFoto(${reg.id})">
+						<i class="material-icons ico_red">delete</i>
+						</a>
+						
                     </div>
                     <div class="card-content">
                         <p> ${reg.nome}</p>
@@ -20,8 +78,14 @@ function card(reg) {
 function sincroniza() {
 
 	var formData = new FormData();
-	server.fotos.query().filter('sinc', 0).execute().done(function (r) {
-		if (!r.length) return // se não tem nenhuma foto,  faz nada
+	//server.fotos.query().filter('sinc', 0).execute().done(function (r) {
+	server.fotos.query().filter().execute().done(function (r) {
+		if (!r.length) {
+			M.toast({
+				html: 'Nada para sincronizar. Parabéns!'
+			})
+			return // se não tem nenhuma foto,  faz nada
+		}
 		let id = r[0].id
 		let nome = r[0].nome
 		let base_64 = r[0].base_64
@@ -36,16 +100,31 @@ function sincroniza() {
 			type: 'POST',
 			data: formData,
 			dataType: 'json',
+			beforeSend: function() {
+	
+			},
 			success: function (data) {
 				if (data.success) {
-					console.log('successo')
+					$(`#card_${id} .material-icons` ).removeClass('ico_red')
 					server.fotos.remove(id).done(function () {
-						$('#card_' + id).css('display', 'none')
+						$(`#card_${id} .material-icons` ).html('done_all').addClass('ico_blue')
+						$('#card_' + id).fadeOut('10000')
 						sincroniza()
 					})
 				} else {
-					console.log('erro')
-					$('#card_' + id).fadeOut()
+					$(`#card_${id} .material-icons` ).removeClass('ico_blue')
+					if (data.erro == 1) {
+						$(`#card_${id} .material-icons` ).html('sync_disabled').addClass('ico_red')
+						$(`#card_${id} .card-content` ).html(`<p>${data.message}</p>`)
+						$(`#card_${id} .progress` ).remove()
+						server.fotos.remove(id).done(function () {
+							sincroniza()
+						})
+					} else {
+						// Ocorreu um problema não esperado na sincronização
+						$(`#card_${id} .material-icons` ).html('sync_problem').addClass('ico_red')
+						
+					}
 				}
 			},
 			cache: false,
@@ -69,3 +148,8 @@ function sincroniza() {
 	})
 
 }
+$(document).ready(function(){
+	$('.sidenav').sidenav();
+	$('.fixed-action-btn').floatingActionButton();
+	$('.painel').floatingActionButton();
+})

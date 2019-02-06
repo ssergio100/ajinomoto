@@ -6,7 +6,13 @@ class Fotos_model extends CI_Model
     public function __construct()
     {
         parent::__construct();
+        $this->db->query("SET CLIENT_ENCODING TO 'UTF8'"); 
+    }
 
+    public function getAllImages() {
+        $query = "SELECT * FROM fotos WHERE ativo = 1";
+        $result = $this->db->query($query)->result();
+        return $result;
     }
 
     public function getImageByMd5($nome_md5) {
