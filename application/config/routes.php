@@ -52,5 +52,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'Home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['fotos']['get'] = "Fotos/getAll";
-$route['painel']['get'] = "Home/painel";
+$route['fotos/(:any)']['get'] = 'Fotos/getAll/$1'; //podera vir -1
+$route['fotos/(:num)']['delete'] = 'Fotos/delete/$1';
+$route['painel']['get'] = 'Home/painel';
+$route['aprovar/(:num)/(:num)']['put'] = 'Fotos/aprovar/$1/$2';
+

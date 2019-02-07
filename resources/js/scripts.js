@@ -5,12 +5,34 @@ function toast() {
 	localStorage.setItem('lastMessage', '')
 }
 
+function card_painel(reg, btns = null) {
+
+	html = `<div class="col s12 m4" id="card_${reg.id}">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="${reg.base_64}">
+                        ${btns}
+                    </div>
+                    <div class="card-content">
+                        <p> ${reg.nome}</p>
+                    </div>
+                      <div class="progress" id="bar_${reg.id}" style="display:none">
+                        <div  class="determinate" ></div>
+                    </div>
+                </div>
+            </div>`
+	return html
+}
+
 function getAll() {
-	
+
 	server.fotos.query().filter().execute().done(function (r) {
 		$('#imagens').html('')
 		$.each(r, function (index, value) {
-			let html = card(value)
+			let btns = `<a class="btn-floating halfway-fab waves-effect waves-light white" onclick="removeFoto(${value.id})">
+			<i class="material-icons ico_red">delete</i>
+			</a>`
+			let html = card_painel(value, btns)
 			$('#imagens').append(html);
 
 		});
@@ -33,47 +55,7 @@ db.open({
 	getAll()
 });
 
-function card(reg) {
-	html = `<div class="col s12 m4" id="card_${reg.id}">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="${reg.base_64}">
-                        <a class="btn-floating halfway-fab waves-effect waves-light white" onclick="removeFoto(${reg.id})">
-						<i class="material-icons ico_red">delete</i>
-						</a>
-						
-                    </div>
-                    <div class="card-content">
-                        <p> ${reg.nome}</p>
-                    </div>
-                      <div class="progress" id="bar_${reg.id}" style="display:none">
-                        <div  class="determinate" ></div>
-                    </div>
-                </div>
-            </div>`
-	return html
-}
 
-function card_painel(reg) {
-	html = `<div class="col s12 m4" id="card_${reg.id}">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="${reg.base_64}">
-                        <a class="btn-floating halfway-fab waves-effect waves-light white" onclick="removeFoto(${reg.id})">
-						<i class="material-icons ico_red">delete</i>
-						</a>
-						
-                    </div>
-                    <div class="card-content">
-                        <p> ${reg.nome}</p>
-                    </div>
-                      <div class="progress" id="bar_${reg.id}" style="display:none">
-                        <div  class="determinate" ></div>
-                    </div>
-                </div>
-            </div>`
-	return html
-}
 
 function sincroniza() {
 
@@ -144,12 +126,28 @@ function sincroniza() {
 				return myXhr;
 			}
 		});
-
 	})
-
 }
+
+function aprova(id, flag) {
+	let url = `aprovar/${id}/${flag}`
+	$.ajax({
+		type: "PUT",
+		url: url,
+		data: {id:id},
+		dataType: "json",
+		success: function (response) {
+			if(response.success) {
+				console.log('Pronto')
+			}
+			$('#card_' + id).fadeOut('10000')
+		}
+	});
+}
+
 $(document).ready(function(){
 	$('.sidenav').sidenav();
 	$('.fixed-action-btn').floatingActionButton();
 	$('.painel').floatingActionButton();
 })
+

@@ -26,7 +26,10 @@ function removeFoto(id) {
 function getLastFoto() {
 	server.fotos.query().filter().execute().done(function (r) {
 		let reg = r[r.length - 1]
-		let html = card(reg)
+		let btns = `<a class="btn-floating halfway-fab waves-effect waves-light white" onclick="removeFoto(${reg.id})">
+		<i class="material-icons ico_red">delete</i>
+		</a>`
+		let html = card_painel(reg, btns)
 		$('#imagens').append(html);
 	});
 }

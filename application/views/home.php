@@ -52,6 +52,11 @@ nav ul li a{
 .sidenav li>a>i.material-icons {
     margin: 0 12px 0 0 !important;
 }
+
+.btn-floating.halfway-fab.left {
+    right: auto;
+    left: 180px;
+}
 </style>
 <body>
   <!-- Dropdown Structure -->
@@ -62,8 +67,8 @@ nav ul li a{
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#" onclick="sincroniza()">Sincronizar</a></li>
-        <li><a href="painel" class="sidenav-trigger show-on-large">Painel</a></li>
-        <li><a href="./" class="sidenav-trigger show-on-large">Fotos</a></li>
+        <li><a href="painel" class="show-on-large">Painel</a></li>
+        <li><a href="./" class="show-on-large">Fotos</a></li>
         <li><a href="badges.html">Sair</a></li>
       </ul>
     </div>
@@ -72,9 +77,9 @@ nav ul li a{
 <!--  -->
   <ul class="sidenav" id="mobile-demo">
     <li><a href="#" onclick="sincroniza()"><i class="material-icons">cached</i>Sincronizar</a></li>
-    <li><a href="painel" class="sidenav-trigger show-on-large"><i class="material-icons">art_track</i>Painel</a></li>
-    <li><a href="./" class="sidenav-trigger show-on-large"><i class="material-icons">add_a_photo</i>Fotos</a></li>
-    <li><a href="badges.html" class="sidenav-trigger show-on-large"><i class="material-icons">exit_to_app</i>Sair</a></li>
+    <li><a href="painel" class="show-on-large"><i class="material-icons">art_track</i>Painel</a></li>
+    <li><a href="./" class="show-on-large"><i class="material-icons">add_a_photo</i>Fotos</a></li>
+    <li><a href="badges.html" class="show-on-large"><i class="material-icons">exit_to_app</i>Sair</a></li>
   </ul>
 
     <div class="container">

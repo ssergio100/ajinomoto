@@ -9,8 +9,8 @@ class Fotos_model extends CI_Model
         $this->db->query("SET CLIENT_ENCODING TO 'UTF8'"); 
     }
 
-    public function getAllImages() {
-        $query = "SELECT * FROM fotos WHERE ativo = 1";
+    public function getAllImages($aprovada) {
+        $query = "SELECT * FROM fotos WHERE ativo = 1 AND aprovada = $aprovada";
         $result = $this->db->query($query)->result();
         return $result;
     }
@@ -30,6 +30,13 @@ class Fotos_model extends CI_Model
     public function removeImageByName($md5_image_name) {
         $this->db->where('nome_md5', $md5_image_name);
         $this->db->delete('fotos');
+        $rows = $this->db->affected_rows();
+        return $rows > 0 ? true : false;
+    }
+
+    public function aprovar($id, $flag) {
+        $query = "UPDATE fotos set aprovada = $flag WHERE id = $id";
+        $this->db->query($query);
         $rows = $this->db->affected_rows();
         return $rows > 0 ? true : false;
     }
