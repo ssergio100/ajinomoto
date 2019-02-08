@@ -1,4 +1,4 @@
-function getAll(aprovada = -1){ 
+function getAllServer(aprovada = -1){ 
 	$.ajax({
 		url: `fotos/${aprovada}`,
 		type: 'GET',
@@ -23,11 +23,11 @@ function getAll(aprovada = -1){
 					$('#imagens_painel').append(html);
 		
 				});
+				$('.materialboxed').materialbox();
 			} else {
 				console.log('erro')
 			}
 		}
 	});
 }
-getAll()
-
+getAllServer()

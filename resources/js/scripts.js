@@ -8,13 +8,13 @@ function toast() {
 function card_painel(reg, btns = null) {
 
 	html = `<div class="col s12 m4" id="card_${reg.id}">
-                <div class="card">
+                <div class="card hoverable">
                     <div class="card-image">
-                        <img src="${reg.base_64}">
+                        <img src="${reg.base_64}" id="img_${reg.id}" class="responsive-img">
                         ${btns}
                     </div>
                     <div class="card-content">
-                        <p> ${reg.nome}</p>
+					<span class="green-text truncate"> ${reg.nome}</span>
                     </div>
                       <div class="progress" id="bar_${reg.id}" style="display:none">
                         <div  class="determinate" ></div>
@@ -36,6 +36,7 @@ function getAll() {
 			$('#imagens').append(html);
 
 		});
+		$('.materialboxed').materialbox();
 	});
 }
 
@@ -44,6 +45,12 @@ db.open({
 	version: 4,
 	schema: {
 		fotos: {
+			key: {
+				keyPath: 'id',
+				autoIncrement: true
+			},
+		},
+		lojas: {
 			key: {
 				keyPath: 'id',
 				autoIncrement: true
@@ -129,25 +136,41 @@ function sincroniza() {
 	})
 }
 
-function aprova(id, flag) {
-	let url = `aprovar/${id}/${flag}`
-	$.ajax({
-		type: "PUT",
-		url: url,
-		data: {id:id},
-		dataType: "json",
-		success: function (response) {
-			if(response.success) {
-				console.log('Pronto')
-			}
-			$('#card_' + id).fadeOut('10000')
-		}
+obj = {}
+arr = []
+$.ajax({
+	type: "get",
+	url: "lojas",
+	dataType: "json",
+	success: function (data) {
+		$.each(data.data, function (index, value) {
+			obj = {id:value.id,razao_social:value.razao_social,cnpj:value.cnpj}
+			//if (getLojaByCnpj('cnpj', value.cnpj) > 0) 
+			addLoja(obj)
+		})
+	
+	}
+});
+
+function addLoja(obj) {
+	server.lojas.add(obj).done(function (item) {
+	});
+}
+
+function getLojaByCnpj(campo, valor) {
+	server.lojas.query().filter(campo, valor).execute().done(function (r) {
+		return r.length;
 	});
 }
 
 $(document).ready(function(){
-	$('.sidenav').sidenav();
-	$('.fixed-action-btn').floatingActionButton();
-	$('.painel').floatingActionButton();
+	// $('.sidenav').sidenav();
+	// $('.fixed-action-btn').floatingActionButton();
+	// $('.painel').floatingActionButton();
+	M.AutoInit();
+	
+	Jimp.read('https://cdn4.buysellads.net/uu/1/41629/1546451302-digitalocean-260x200-blue_1_.png', function (err, image) {
+		console.log(image)
+	});
 })
 

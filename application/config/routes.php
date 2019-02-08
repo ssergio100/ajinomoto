@@ -56,4 +56,5 @@ $route['fotos/(:any)']['get'] = 'Fotos/getAll/$1'; //podera vir -1
 $route['fotos/(:num)']['delete'] = 'Fotos/delete/$1';
 $route['painel']['get'] = 'Home/painel';
 $route['aprovar/(:num)/(:num)']['put'] = 'Fotos/aprovar/$1/$2';
+$route['lojas']['get'] = 'Lojas/index';
 

@@ -3,7 +3,7 @@
         <div class="imagens" id="imagens">
         </div>
         <div class="fixed-action-btn ">
-            <a class="btn-floating waves-effect waves-light btn-large blue" onclick="callFile()">
+            <a class="btn-floating waves-effect waves-light btn-large blue pulse" onclick="callFile()">
               <i class="large material-icons">add_a_photo</i>
             </a>
         </div>

@@ -11,6 +11,5 @@
     <script type="text/javascript" src="<?php echo base_url('resources/js/materialize.min.js');?>"></script>
     <script type="text/javascript" src="<?php echo base_url('resources/js/pace.min.js');?>"></script>
     <script type="text/javascript" src="<?php echo base_url('resources/js/db.js');?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('resources/js/scripts.js');?>"></script>
     <title>Document</title>
 </head>
