@@ -9,15 +9,15 @@ db.js
 
 Fotos :
 Da acesso ao botão para submeter fotos. 
-As fotos podem ser capturadas com a camera do celular ou localizadas no  armazenamento;
-* As fotos são armazenadas em base64 no banco de dados do navegados.
+As fotos podem ser capturadas com a câmera do celular ou localizadas no  armazenamento;
+* As fotos são armazenadas em base64 no banco de dados do navegador.
 
 Sincronizar:
-Submete as fotos armazenadas no banco do navegados para um servidor remoto
+Submete as fotos armazenadas no banco do navegador para um banco de um servidor remoto
 * fotos repetidas não são enviadas;
 
 Painel:
-Mostra as fotos que foram enviadas para o servidos, e permitem que sejam aprovadas ou reprovadas.
+Mostra as fotos que foram enviadas para o servidor, e permitem que sejam aprovadas ou reprovadas.
 * após aprovar ou reprovar as fotos somem desta interface.
 
 
