@@ -50,12 +50,12 @@ db.open({
 				autoIncrement: true
 			},
 		},
-		lojas: {
-			key: {
-				keyPath: 'id',
-				autoIncrement: true
-			},
-		}
+		// lojas: {
+		// 	key: {
+		// 		keyPath: 'id',
+		// 		autoIncrement: true
+		// 	},
+		// }
 	}
 }).done(function (s) {
 	server = s
