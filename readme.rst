@@ -27,25 +27,30 @@ application/config/config.php linha 26
 
 *************************************** BANCO DE DADOS **********************
 
-CREATE DATABASE sergio
 
- CREATE TABLE public.lojas (
+application/config/database.php 
+
+    'hostname' => '',
+	'username' => '',
+	'password' => '',
+	'database' => 'sergio',
+	'dbdriver' => 'postgre',
+
+CREATE TABLE public.fotos (
   id SERIAL,
-  razao_social VARCHAR(255),
-  cnpj VARCHAR(20),
+  nome_md5 VARCHAR(255) NOT NULL,
+  imagem_path VARCHAR(255) NOT NULL,
+  nome VARCHAR(255),
+  data TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT now() NOT NULL,
   ativo INTEGER DEFAULT 1 NOT NULL,
-  CONSTRAINT lojas_pkey PRIMARY KEY(id)
+  aprovada INTEGER DEFAULT '-1'::integer NOT NULL,
+  ext VARCHAR(4),
+  CONSTRAINT fotos_pkey PRIMARY KEY(id)
 ) 
 WITH (oids = false);
 
-ALTER TABLE public.lojas
-  ALTER COLUMN id SET STATISTICS 0;
-
-ALTER TABLE public.lojas
-  ALTER COLUMN razao_social SET STATISTICS 0;
-
-ALTER TABLE public.lojas
-  ALTER COLUMN cnpj SET STATISTICS 0;
+COMMENT ON COLUMN public.fotos.nome_md5
+IS 'md5 gerado atravez do base 64 da imagem';
 
 
 
