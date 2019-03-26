@@ -25,7 +25,7 @@ base_url.
 application/config/config.php linha 26
 
 
-*************************************** BANCO DE DADOS **********************
+******************* BANCO DE DADOS **********************
 
 
 application/config/database.php 
