@@ -1,5 +1,3 @@
-
-
 function addFoto(nome, base_64) {
 	server.fotos.add({
 		nome: nome,
@@ -9,8 +7,6 @@ function addFoto(nome, base_64) {
 		getLastFoto()
 	});
 }
-
-
 
 function removeFoto(id) {
 	toastHTML = '<span>Foto Removida</span><button class="btn-flat toast-action" onclick="undoFoto()">Desfazer</button>'
@@ -51,8 +47,6 @@ function undoFoto() {
 	toast()
 
 }
-
-
 
 function encodeImageFileAsURL(element) {
 	var file = element.files[0];

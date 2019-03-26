@@ -36,8 +36,9 @@ $config['base_url'] = 'http://192.168.76.197/ajinomoto/';
 |
 */
 $config['index_page'] = '';
+$path_imagens = 'resources/upload/imagens/';
+$config['path_imagens'] = $path_imagens;
 
-$config['imagens_path'] = 'resources/upload/imagens/';
 /*
 |--------------------------------------------------------------------------
 | URI PROTOCOL

@@ -16,7 +16,7 @@ class Fotos_model extends CI_Model
     }
 
     public function getImageByMd5($nome_md5) {
-        $query = "SELECT * FROM fotos WHERE nome_md5 = '$nome_md5' AND ativo = 1";
+        $query = "SELECT * FROM fotos WHERE nome_md5 = '$nome_md5' AND ativo = 1 AND aprovada <> 0";
         $result = $this->db->query($query)->result();
         return $result;
     }
@@ -34,8 +34,8 @@ class Fotos_model extends CI_Model
         return $rows > 0 ? true : false;
     }
 
-    public function aprovar($id, $flag) {
-        $query = "UPDATE fotos set aprovada = $flag WHERE id = $id";
+    public function aprovar($id_foto, $status) {
+        $query = "UPDATE fotos set aprovada = $status WHERE id = $id_foto";
         $this->db->query($query);
         $rows = $this->db->affected_rows();
         return $rows > 0 ? true : false;

@@ -64,7 +64,7 @@ db.open({
 
 
 
-function sincroniza() {
+function sincronizaFotos() {
 
 	var formData = new FormData();
 	//server.fotos.query().filter('sinc', 0).execute().done(function (r) {
@@ -82,7 +82,7 @@ function sincroniza() {
 		formData.append('foto', base_64)
 		formData.append('nome', nome)
 
-		var url = 'sincronia/index';
+		var url = 'sincronia-fotos';
 		$('#bar_' + id).css('display', 'block')
 		$.ajax({
 			url: url,
@@ -136,41 +136,8 @@ function sincroniza() {
 	})
 }
 
-obj = {}
-arr = []
-$.ajax({
-	type: "get",
-	url: "lojas",
-	dataType: "json",
-	success: function (data) {
-		$.each(data.data, function (index, value) {
-			obj = {id:value.id,razao_social:value.razao_social,cnpj:value.cnpj}
-			//if (getLojaByCnpj('cnpj', value.cnpj) > 0) 
-			addLoja(obj)
-		})
-	
-	}
-});
-
-function addLoja(obj) {
-	server.lojas.add(obj).done(function (item) {
-	});
-}
-
-function getLojaByCnpj(campo, valor) {
-	server.lojas.query().filter(campo, valor).execute().done(function (r) {
-		return r.length;
-	});
-}
 
 $(document).ready(function(){
-	// $('.sidenav').sidenav();
-	// $('.fixed-action-btn').floatingActionButton();
-	// $('.painel').floatingActionButton();
 	M.AutoInit();
-	
-	Jimp.read('https://cdn4.buysellads.net/uu/1/41629/1546451302-digitalocean-260x200-blue_1_.png', function (err, image) {
-		console.log(image)
-	});
 })
 

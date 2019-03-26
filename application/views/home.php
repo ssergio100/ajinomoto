@@ -56,7 +56,31 @@ nav ul li a{
     margin: 0 12px 0 0 !important;
 }
 
+.preloader-background {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #eee;
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+  p {
+    padding-top:120px;
+    margin-left: -60px;
+    opacity: 0.8;
+  } 
+}
 
+// ADD BLINKING TEXT CLASS
+.blinking {
+	animation: blinker 0.5s linear infinite;
+}
+@keyframes blinker {  
+  50% { opacity: 0; }
+}
 /* .btn-floating.halfway-fab.left {
     right: auto;
     left: 180px;
@@ -64,22 +88,36 @@ nav ul li a{
 </style>
 <body>
   <!-- Dropdown Structure -->
-  <div class="navbar-fixed">
-  <nav class="lighten-1">
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo"></a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#" onclick="sincroniza()">Sincronizar</a></li>
-        <li><a href="painel" class="">Painel</a></li>
-        <li><a href="./" class="">Fotos</a></li>
-        <li><a href="badges.html">Sair</a></li>
-      </ul>
+  <div class="preloader-background">
+    <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue">
+            <div class="circle-clipper left">
+            <div class="circle"></div>
+            </div><div class="gap-patch">
+            <div class="circle"></div>
+            </div><div class="circle-clipper right">
+            <div class="circle"></div>
+            </div>
+        </div>
     </div>
-  </nav>
 </div>
+<div class="navbar-fixed">
+    <nav class="lighten-1">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo"></a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#" onclick="sincronizaFotos()" class="waves-effect waves-block waves-light">Sincronizar</a></li>
+                <li><a href="painel"class="waves-effect waves-block waves-light">Painel</a></li>
+                <li><a href="home" class="waves-effect waves-block waves-light">Fotos</a></li>
+                <li><a href="login" class="waves-effect waves-block waves-light">Sair</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
 <!--  -->
-  <ul class="sidenav sidenav-fixed" id="mobile-demo">
+<ul class="sidenav" id="mobile-demo">
     <li>
       <div class="user-view">
         <div class="background">
@@ -96,11 +134,19 @@ nav ul li a{
         </a>
       </div>
     </li>
-    <li><a href="#" class="sidenav-close" onclick="sincroniza()"><i class="material-icons">cached</i>Sincronizar</a></li>
-    <li><a href="painel" class="sidenav-close"><i class="material-icons">art_track</i>Painel</a></li>
-    <li><a href="./" class="sidenav-close"><i class="material-icons">add_a_photo</i>Fotos</a></li>
-    <li><a href="badges.html" class="sidenav-close"><i class="material-icons">exit_to_app</i>Sair</a></li>
-  </ul>
+    <li>
+        <a href="#" class="sidenav-close" onclick="sincronizaFotos()"><i class="material-icons">cached</i>Sincronizar</a>
+    </li>
+    <li>
+        <a href="painel" class="sidenav-close"><i class="material-icons">art_track</i>Painel</a>
+    </li>
+    <li>
+        <a href="home" class="sidenav-close"><i class="material-icons">add_a_photo</i>Fotos</a>
+    </li>
+    <li>
+        <a href="login" class="sidenav-close"><i class="material-icons">exit_to_app</i>Sair</a>
+    </li>
+</ul>
 
     <div class="container">
         <?php $this->load->view($page);?>
@@ -175,6 +221,14 @@ nav ul li a{
     </div>
         <?php $this->load->view('includes/footer');?>
         <script type="text/javascript" src="<?php echo base_url('resources/js/scripts.js');?>"></script>
-        <script type="text/javascript" src="<?php echo base_url('resources/js/jimp.min.js');?>"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                $('.preloader-background').delay(1700).fadeOut('slow');
+                
+                $('.preloader-wrapper')
+                    .delay(1700)
+                    .fadeOut();
+            });
+        </script>
 </body>
 </html>

@@ -1,0 +1,126 @@
+/*! CSS Used from: http://demo.geekslabs.com/materialize/v2.2/layout03/css/materialize.css ; media=screen, projection */
+@media screen, projection{
+  .cyan{background-color:#00bcd4!important;}
+  html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+  body{margin:0;}
+  a{background-color:transparent;}
+  a:active,a:hover{outline:0;}
+  img{border:0;}
+  input{color:inherit;font:inherit;margin:0;}
+  input::-moz-focus-inner{border:0;padding:0;}
+  input{line-height:normal;}
+  input[type="checkbox"]{box-sizing:border-box;padding:0;}
+  html{box-sizing:border-box;}
+  *,*:before,*:after{box-sizing:inherit;}
+  a{color:#039be5;text-decoration:none;-webkit-tap-highlight-color:transparent;}
+  .card-panel,.btn{box-shadow:0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);}
+  .btn:hover{box-shadow:0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);}
+  .z-depth-4{box-shadow:0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);}
+  i{line-height:inherit;}
+  img.responsive-img{max-width:100%;height:auto;}
+  .right-align{text-align:right;}
+  .center,.center-align{text-align:center;}
+  .circle{border-radius:50%;}
+  [class^="mdi-"],[class*="mdi-"]{speak:none;display:inline-block;font:normal normal normal 24px/1 'Material-Design-Icons';text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;transform:translate(0, 0);}
+  [class^="mdi-"]:before,[class*="mdi-"]:before{display:inline-block;speak:none;text-decoration:inherit;}
+  .mdi-action-lock-outline:before{content:"\e643";}
+  .mdi-social-person-outline:before{content:"\e8da";}
+  .row{margin-left:auto;margin-right:auto;margin-bottom:20px;}
+  .row:after{content:"";display:table;clear:both;}
+  .row .col{float:left;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0 0.75rem;}
+  .row .col.s6{width:50%;margin-left:0;}
+  .row .col.s12{width:100%;margin-left:0;}
+  @media only screen and (min-width: 601px){
+  .row .col.m6{width:50%;margin-left:0;}
+  .row .col.m12{width:100%;margin-left:0;}
+  }
+  @media only screen and (min-width: 993px){
+  .row .col.l6{width:50%;margin-left:0;}
+  .row .col.l12{width:100%;margin-left:0;}
+  }
+  a{text-decoration:none;}
+  html{line-height:1.5;font-family:"Roboto", sans-serif;font-weight:normal;color:rgba(0, 0, 0, 0.87);}
+  @media only screen and (min-width: 0){
+  html{font-size:14px;}
+  }
+  @media only screen and (min-width: 992px){
+  html{font-size:14.5px;}
+  }
+  @media only screen and (min-width: 1200px){
+  html{font-size:15px;}
+  }
+  .card-panel{padding:20px;margin:0.5rem 0 1rem 0;border-radius:2px;background-color:#fff;}
+  .btn{border:none;border-radius:2px;display:inline-block;height:36px;line-height:36px;outline:0;padding:0 2rem;text-transform:uppercase;vertical-align:middle;-webkit-tap-highlight-color:transparent;}
+  .btn:disabled{background-color:#DFDFDF;box-shadow:none;color:#9F9F9F;cursor:default;}
+  .btn:disabled:hover{background-color:#DFDFDF;color:#9F9F9F;}
+  .btn{text-decoration:none;color:#FFF;background-color:#ff4081;text-align:center;letter-spacing:.5px;-webkit-transition:0.2s ease-out;-moz-transition:0.2s ease-out;-o-transition:0.2s ease-out;-ms-transition:0.2s ease-out;transition:0.2s ease-out;cursor:pointer;}
+  .btn:hover{background-color:#ff5a92;}
+  .waves-effect{position:relative;cursor:pointer;display:inline-block;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;vertical-align:middle;z-index:1;will-change:opacity, transform;-webkit-transition:all 0.3s ease-out;-moz-transition:all 0.3s ease-out;-o-transition:all 0.3s ease-out;-ms-transition:all 0.3s ease-out;transition:all 0.3s ease-out;}
+  label{font-size:0.8rem;color:#9e9e9e;}
+  ::-webkit-input-placeholder{color:#d1d1d1;}
+  :-moz-placeholder{color:#d1d1d1;}
+  ::-moz-placeholder{color:#d1d1d1;}
+  :-ms-input-placeholder{color:#d1d1d1;}
+  input[type=text],input[type=password]{background-color:transparent;border:none;border-bottom:1px solid #9e9e9e;border-radius:0;outline:none;height:3rem;width:100%;font-size:1rem;margin:0 0 15px 0;padding:0;box-shadow:none;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;transition:all .3s;}
+  input[type=text]:disabled,input[type=password]:disabled{color:rgba(0, 0, 0, 0.26);border-bottom:1px dotted rgba(0, 0, 0, 0.26);}
+  input[type=text]:disabled + label,input[type=password]:disabled + label{color:rgba(0, 0, 0, 0.26);}
+  input[type=text]:focus:not([readonly]),input[type=password]:focus:not([readonly]){border-bottom:1px solid #ff4081;box-shadow:0 1px 0 0 #ff4081;}
+  input[type=text]:focus:not([readonly]) + label,input[type=password]:focus:not([readonly]) + label{color:#ff4081;}
+  input[type=text] + label:after,input[type=password] + label:after{display:block;content:"";position:absolute;top:65px;opacity:0;transition:.2s opacity ease-out, .2s color ease-out;}
+  .input-field{position:relative;margin-top:1rem;}
+  .input-field label{color:#9e9e9e;position:absolute;top:0.8rem;left:0.75rem;font-size:1rem;cursor:text;-webkit-transition:0.2s ease-out;-moz-transition:0.2s ease-out;-o-transition:0.2s ease-out;-ms-transition:0.2s ease-out;transition:0.2s ease-out;}
+  .input-field .prefix{position:absolute;width:3rem;font-size:2rem;-webkit-transition:color 0.2s;-moz-transition:color 0.2s;-o-transition:color 0.2s;-ms-transition:color 0.2s;transition:color 0.2s;}
+  .input-field .prefix ~ input{margin-left:3rem;width:92%;width:calc(100% - 3rem);}
+  .input-field .prefix ~ label{margin-left:3rem;}
+  @media only screen and (max-width: 992px){
+  .input-field .prefix ~ input{width:86%;width:calc(100% - 3rem);}
+  }
+  @media only screen and (max-width: 600px){
+  .input-field .prefix ~ input{width:80%;width:calc(100% - 3rem);}
+  }
+  .hiddendiv{display:none;white-space:pre-wrap;word-wrap:break-word;overflow-wrap:break-word;padding-top:1.2rem;}
+  form p{margin-bottom:10px;text-align:left;}
+  form p:last-child{margin-bottom:0;}
+  [type="checkbox"]:not(:checked),[type="checkbox"]:checked{position:absolute;left:-9999px;visibility:hidden;}
+  [type="checkbox"] + label{position:relative;padding-left:35px;cursor:pointer;display:inline-block;height:25px;line-height:25px;font-size:1rem;-webkit-user-select:none;-moz-user-select:none;-khtml-user-select:none;-ms-user-select:none;}
+  [type="checkbox"] + label:before{content:'';position:absolute;top:0;left:0;width:18px;height:18px;z-index:0;border:2px solid #5a5a5a;border-radius:1px;margin-top:2px;-webkit-transition:0.2s;-moz-transition:0.2s;-o-transition:0.2s;-ms-transition:0.2s;transition:0.2s;}
+  [type="checkbox"]:checked + label:before{top:-4px;left:-3px;width:12px;height:22px;border-top:2px solid transparent;border-left:2px solid transparent;border-right:2px solid #ff4081;border-bottom:2px solid #ff4081;-webkit-transform:rotate(40deg);-moz-transform:rotate(40deg);-ms-transform:rotate(40deg);-o-transform:rotate(40deg);transform:rotate(40deg);-webkit-backface-visibility:hidden;-webkit-transform-origin:100% 100%;-moz-transform-origin:100% 100%;-ms-transform-origin:100% 100%;-o-transform-origin:100% 100%;transform-origin:100% 100%;}
+  [type="checkbox"]:checked:disabled + label:before{border-right:2px solid rgba(0, 0, 0, 0.26);border-bottom:2px solid rgba(0, 0, 0, 0.26);}
+  }
+  /*! CSS Used from: http://demo.geekslabs.com/materialize/v2.2/layout03/css/style.css ; media=screen, projection */
+  @media screen, projection{
+  body{background-color:#fcfcfc;}
+  .medium-small{font-size:0.9rem;margin:0;padding:0;}
+  .margin{margin:0!important;}
+  #loader-wrapper{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1000;}
+  #loader{display:block;position:relative;left:50%;top:50%;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:50%;border:3px solid transparent;border-top-color:#3498db;-webkit-animation:spin 2s linear infinite;animation:spin 2s linear infinite;z-index:1001;}
+  #loader:before{content:"";position:absolute;top:5px;left:5px;right:5px;bottom:5px;border-radius:50%;border:3px solid transparent;border-top-color:#e74c3c;-webkit-animation:spin 3s linear infinite;animation:spin 3s linear infinite;}
+  #loader:after{content:"";position:absolute;top:15px;left:15px;right:15px;bottom:15px;border-radius:50%;border:3px solid transparent;border-top-color:#f9c922;-webkit-animation:spin 1.5s linear infinite;animation:spin 1.5s linear infinite;}
+  #loader-wrapper .loader-section{position:fixed;top:0;width:51%;height:100%;background:#222222;z-index:1000;-webkit-transform:translateX(0);-ms-transform:translateX(0);transform:translateX(0);}
+  #loader-wrapper .loader-section.section-left{left:0;}
+  #loader-wrapper .loader-section.section-right{right:0;}
+  .loaded #loader-wrapper .loader-section.section-left{-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);transform:translateX(-100%);-webkit-transition:all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);transition:all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);}
+  .loaded #loader-wrapper .loader-section.section-right{-webkit-transform:translateX(100%);-ms-transform:translateX(100%);transform:translateX(100%);-webkit-transition:all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);transition:all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);}
+  .loaded #loader{opacity:0;-webkit-transition:all 0.3s ease-out;transition:all 0.3s ease-out;}
+  .loaded #loader-wrapper{visibility:hidden;-webkit-transform:translateY(-100%);-ms-transform:translateY(-100%);transform:translateY(-100%);-webkit-transition:all 0.3s 1s ease-out;transition:all 0.3s 1s ease-out;}
+  .login-form{width:280px;}
+  .login-form-text{text-transform:uppercase;letter-spacing:2px;font-size:0.8rem;}
+  .profile-image-login{width:100px;height:100px!important;}
+  .login-text{margin-top:-6px;margin-left:-6px!important;}
+  }
+  /*! CSS Used from: http://demo.geekslabs.com/materialize/v2.2/layout03/css/page-center.css ; media=screen, projection */
+  @media screen, projection{
+  html,body{height:100%;}
+  html{display:table;margin:auto;}
+  body{display:table-cell;vertical-align:middle;}
+  }
+  /*! CSS Used keyframes */
+  @-webkit-keyframes spin{0%{-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);}100%{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}
+  @keyframes spin{0%{-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);}100%{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}
+  /*! CSS Used fontfaces */
+  @font-face{font-family:"Material-Design-Icons";src:url("http://demo.geekslabs.com/materialize/v2.2/layout03/font/material-design-icons/Material-Design-Icons.eot#iefix") format("embedded-opentype"), url("http://demo.geekslabs.com/materialize/v2.2/layout03/font/material-design-icons/Material-Design-Icons.woff") format("woff"), url("http://demo.geekslabs.com/materialize/v2.2/layout03/font/material-design-icons/Material-Design-Icons.ttf") format("truetype"), url("http://demo.geekslabs.com/materialize/v2.2/layout03/font/material-design-icons/Material-Design-Icons.svg#Material-Design-Icons") format("svg");font-weight:normal;font-style:normal;}
+  @font-face{font-family:"Roboto";src:url("http://demo.geekslabs.com/materialize/v2.2/layout03/font/roboto/Roboto-Thin.woff") format("woff"), url("http://demo.geekslabs.com/materialize/v2.2/layout03/font/roboto/Roboto-Thin.ttf") format("truetype");font-weight:200;}
+  @font-face{font-family:"Roboto";src:url("http://demo.geekslabs.com/materialize/v2.2/layout03/font/roboto/Roboto-Light.woff") format("woff"), url("http://demo.geekslabs.com/materialize/v2.2/layout03/font/roboto/Roboto-Light.ttf") format("truetype");font-weight:300;}
+  @font-face{font-family:"Roboto";src:url("http://demo.geekslabs.com/materialize/v2.2/layout03/font/roboto/Roboto-Regular.woff") format("woff"), url("http://demo.geekslabs.com/materialize/v2.2/layout03/font/roboto/Roboto-Regular.ttf") format("truetype");font-weight:400;}
+  @font-face{font-family:"Roboto";src:url("http://demo.geekslabs.com/materialize/v2.2/layout03/font/roboto/Roboto-Medium.woff") format("woff"), url("http://demo.geekslabs.com/materialize/v2.2/layout03/font/roboto/Roboto-Medium.ttf") format("truetype");font-weight:500;}
+  @font-face{font-family:"Roboto";src:url("http://demo.geekslabs.com/materialize/v2.2/layout03/font/roboto/Roboto-Bold.woff") format("woff"), url("http://demo.geekslabs.com/materialize/v2.2/layout03/font/roboto/Roboto-Bold.ttf") format("truetype");font-weight:700;}

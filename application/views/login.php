@@ -1,94 +1,76 @@
-<html>
 
-<head>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-  <style>
-    body {
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
-    }
+<!------ Include the above in your HEAD tag ---------->
 
-    main {
-      flex: 1 0 auto;
-    }
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Login!</title>
 
-    body {
-      background: #fff;
-    }
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
-    .input-field input[type=date]:focus + label,
-    .input-field input[type=text]:focus + label,
-    .input-field input[type=email]:focus + label,
-    .input-field input[type=password]:focus + label {
-      color: #e91e63;
-    }
+		<link href="<?php echo site_url('resources/css/materialize.min.css')?>" rel="stylesheet" id="bootstrap-css">
 
-    .input-field input[type=date]:focus,
-    .input-field input[type=text]:focus,
-    .input-field input[type=email]:focus,
-    .input-field input[type=password]:focus {
-      border-bottom: 2px solid #e91e63;
-      box-shadow: none;
-    }
-  </style>
-</head>
+  </head>
+  
+  <body>
+<style>
+.brand-logo {
+    content: "";
+    background: url(<?php echo base_url('resources/img/logo-sabores.svg');?>) 50% no-repeat;
+		background-position: center; 
+		height: 50px;
+		margin:20px 0 20px 0;
+}
+</style>
 
-<body>
-  <div class="section"></div>
-  <main>
-    <center>
-      <img class="responsive-img" style="width: 250px;" src="https://i.imgur.com/ax0NCsK.gif" />
-      <div class="section"></div>
-
-      <h5 class="indigo-text">Please, login into your account</h5>
-      <div class="section"></div>
-
-      <div class="container">
-        <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
-
-          <form class="col s12" method="post">
-            <div class='row'>
-              <div class='col s12'>
-              </div>
+	<div class="container">
+    <div class="row">
+        <div class="col m6 s12 offset-m3">
+				   <div  class="brand-logo col m12 s12"></div>
+            <div class="row">
+                <form class="col s12" action="sincronia">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="text" class="validate" autocomplete="off">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="pass" type="password" class="validate" autocomplete="off">
+                            <label for="pass">Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <p>
+                                <input type="checkbox" id="remember">
+                                <label for="remember">Remember me</label>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col m12">
+                            <p class="center-align">
+                                <button class="btn btn-large waves-effect waves-light" type="submit" name="action">Login</button>
+                            </p>
+                        </div>
+                    </div>
+                </form>
             </div>
-
-            <div class='row'>
-              <div class='input-field col s12'>
-                <input class='validate' type='email' name='email' id='email' />
-                <label for='email'>Enter your email</label>
-              </div>
-            </div>
-
-            <div class='row'>
-              <div class='input-field col s12'>
-                <input class='validate' type='password' name='password' id='password' />
-                <label for='password'>Enter your password</label>
-              </div>
-              <label style='float: right;'>
-								<a class='pink-text' href='#!'><b>Forgot Password?</b></a>
-							</label>
-            </div>
-
-            <br />
-            <center>
-              <div class='row'>
-                <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect indigo'>Login</button>
-              </div>
-            </center>
-          </form>
         </div>
-      </div>
-      <a href="#!">Create account</a>
-    </center>
+    </div>
+</div>
 
-    <div class="section"></div>
-    <div class="section"></div>
-  </main>
-
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+<script src="<?php echo site_url('resources/js/materialize.min.js')?>"></script>
+<script src="<?php echo site_url('resources/js/jquery.min.js')?>"></script>
 </body>
-
 </html>

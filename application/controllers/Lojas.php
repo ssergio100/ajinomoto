@@ -24,15 +24,4 @@ class Lojas extends CI_Controller {
 
 		echo json_encode($this->response);
 	}
-
-	public function aprovar($id, $flag) {
-		$result = $this->fotos->aprovar($id, $flag);
-		if ($result) {
-			$this->response['success'] = true;
-		} else {
-			$this->response['message'] = 'A imagem não pode ser excluída';
-		}
-
-		echo json_encode($this->response);
-	}
 }

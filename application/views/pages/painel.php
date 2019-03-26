@@ -1,3 +1,7 @@
+<style>
+.btn-card-center{
+    position: 126px !important;
+}</style>
 <div class="row"><br><br>
         <div class="imagens" id="imagens_painel">
        
