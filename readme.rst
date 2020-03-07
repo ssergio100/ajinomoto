@@ -21,18 +21,19 @@ As fotos podem ser capturadas com a câmera do celular ou localizadas no  armaze
 
 Sincronizar:
 Submete as fotos armazenadas no banco do navegador para um banco de um servidor remoto
-* fotos repetidas não são enviadas;
+* fotos repetidas não serão enviadas;
 
 Painel:
 Mostra as fotos que foram enviadas para o servidor, e permitem que sejam aprovadas ou reprovadas.
 * após aprovar ou reprovar as fotos somem desta interface.
 
-** Para acessar via dispositivo móvel pode ser necessario usar o ip do servidor web na configuração da
+** Para acessar via dispositivo móvel pode ser necessário usar o ip do servidor web na configuração da
 base_url.
 application/config/config.php linha 26
 
 
-******************* BANCO DE DADOS **********************
+BANCO DE DADOS
+^^^^^^^^^^^^^^
 
 
 application/config/database.php 
