@@ -1,12 +1,11 @@
 Projeto de para testar alguns conceitos de WebApp
 *********************************************************
-Desenvolvido com:
-^^^^^^^^^^^^^^^^^^
-Codeigniter
-Materialize  - framework baseado no Material Design do Google
-Jquery.js
-Pace.js
-db.js
+-Desenvolvido com:
+-Codeigniter
+-Materialize  - framework baseado no Material Design do Google
+-Jquery.js
+-Pace.js
+-db.js
 
 Fotos :
 Da acesso ao botão para submeter fotos. 
