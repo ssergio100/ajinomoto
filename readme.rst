@@ -4,7 +4,7 @@ Projeto de para testar alguns conceitos de WebApp
 
 -Codeigniter
 
--Materialize  - framework baseado no Material Design do Google
+-Materialize
 
 -Jquery.js
 
@@ -14,6 +14,7 @@ Projeto de para testar alguns conceitos de WebApp
 
 
 Fotos :
+
 Da acesso ao botão para submeter fotos. 
 As fotos podem ser capturadas com a câmera do celular ou localizadas no  armazenamento;
 * As fotos são armazenadas em base64 no banco de dados do navegador.
